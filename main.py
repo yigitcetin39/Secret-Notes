@@ -94,8 +94,9 @@ def decrypt(text, key):
 
 window = tk.Tk()
 window.title("Secret Notes")
-window.minsize(width=400, height=600)
+#window.minsize(width=350, height=600)
 window.config(padx=20, pady=20)
+FONT = ("Helvetica", 16)
 
 original_image = Image.open("topsecret.png")
 resized_image = original_image.resize((100, 100))
@@ -105,26 +106,26 @@ image_label = tk.Label(window, image=image)
 image_label.image = image
 image_label.pack()
 
-name_label = Label(text="Enter your title")
+name_label = Label(text="Enter your title",font=FONT)
 name_label.pack()
 
 name_entry = Entry(width=20)
 name_entry.pack()
 
-secret_label = Label(text="Enter your secret")
+secret_label = Label(text="Enter your secret", font=FONT)
 secret_label.pack()
 
 secret_textbox = tk.Text(window, width=35, height=18)
 secret_textbox.pack()
 
 
-masterkey_label = Label(text="Enter master key")
+masterkey_label = Label(text="Enter master key", font=FONT)
 masterkey_label.pack()
 
 masterkey_entry = Entry(width=25)
 masterkey_entry.pack()
 
-check_button_1 = Button(text="Save & Encrypt", command=save_and_encrypt)
+check_button_1 = Button(text="Save & Encrypt",command=save_and_encrypt)
 check_button_1.pack()
 
 check_button_2 = Button(text="Decrypt", command=decrypt_and_display)
